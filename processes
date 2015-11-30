@@ -19,6 +19,9 @@ _decompose-process-docker-up() {
 
 # Docker Compose build
 _decompose-process-docker-build() {
+  # Get latest docker-compose.yml images
+  docker-compose pull
+
   # Remove 'source' container if this is production
   echo "Rebuilding/recreating all containers..."
   if [[ $PRODUCTION ]]; then
