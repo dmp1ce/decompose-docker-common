@@ -8,4 +8,24 @@ _decompose-process-remove-untagged-docker-images_help() {
   echo "  Remove all untagged Docker images that are not being used by a container"
 }
 
+# Docker Compose functions
+_decompose-process-docker-up() {
+  if [[ $PRODUCTION ]]; then
+    docker-compose up -d --force-recreate
+  else
+    docker-compose up -d
+  fi
+}
+
+# Docker Compose build
+_decompose-process-docker-build() {
+  # Remove 'source' container if this is production
+  echo "Rebuilding/recreating all containers..."
+  if [[ $PRODUCTION ]]; then
+    docker-compose rm -f source
+  fi
+
+  docker-compose build --pull
+}
+
 # vim:syntax=sh
