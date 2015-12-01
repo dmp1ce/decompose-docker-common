@@ -24,10 +24,7 @@ _decompose-process-docker-build() {
 
   # Remove 'source' container if this is production
   echo "Rebuilding/recreating all containers..."
-  if [[ $PRODUCTION ]]; then
-    docker-compose rm -f source
-  fi
-
+  docker-compose rm -f source
   docker-compose build --pull
 }
 
