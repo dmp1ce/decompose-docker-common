@@ -22,9 +22,7 @@ _decompose-process-docker-build() {
   # Get latest docker-compose.yml images
   docker-compose pull
 
-  # Remove 'source' container if this is production
   echo "Rebuilding/recreating all containers..."
-  docker-compose rm -f source
   docker-compose build --pull
 }
 
