@@ -19,14 +19,12 @@ $ cd .decompose/environment
 $ git submodule add https://github.com/dmp1ce/decompose-docker-common.git lib/docker
 ```
 
-Then make your `processes` and `elements` file look like this:
+Then make your `processes` file look like this:
 ``` bash
-$ cat elments
-# Include common elements
-source $(_decompose-project-root)/.decompose/environment/lib/docker/elements
 $ cat processes
 # Include common processes
 source $(_decompose-project-root)/.decompose/environment/lib/docker/processes
+DECOMPOSE_PROCESSES=( "${DECOMPOSE_DOCKER_PROCESSES[@]}" )
 ```
 
 ## Elements
