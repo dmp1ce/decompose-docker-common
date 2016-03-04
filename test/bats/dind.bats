@@ -14,8 +14,4 @@
   echo "more"
 } 
 
-@test "thirds" {
-  echo "3"
-} 
-
 # vim:syntax=sh tabstop=2 shiftwidth=2 expandtab
