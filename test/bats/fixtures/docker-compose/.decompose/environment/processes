@@ -1,0 +1,2 @@
+source $(_decompose-project-root)/.decompose/environment/lib/docker/processes
+DECOMPOSE_PROCESSES=( "${DECOMPOSE_DOCKER_PROCESSES[@]}" )
