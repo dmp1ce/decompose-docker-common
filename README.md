@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/dmp1ce/decompose-docker-common.svg?branch=master)](https://travis-ci.org/dmp1ce/decompose-docker-common)
+[![Build Status](https://travis-ci.org/dmp1ce/decompose-backup-common.svg?branch=master)](https://travis-ci.org/dmp1ce/decompose-backup-common)
 # decompose-docker-common
 Common code for decompose environment that use Docker
 
