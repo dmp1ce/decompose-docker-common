@@ -1,0 +1,16 @@
+# Include common processes
+source $(_decompose-project-root)/.decompose/environment/processes
+DECOMPOSE_PROCESSES=( "${DECOMPOSE_DOCKER_PROCESSES[@]}" 'docker_build' )
+
+_decompose-process-docker_build() {
+  _decompose-process-docker-build
+  local error_code=$?
+  echo "Error code returned from '_decompose-process-docker-build' is: $error_code"
+
+  return $error_code
+}
+_decompose-process-docker_build_help() {
+  echo "  Docker build fails"
+}
+
+# vim:syntax=sh
