@@ -19,11 +19,16 @@ _decompose-process-docker-up() {
 
 # Docker Compose build
 _decompose-process-docker-build() {
+  local return_code=0
   # Get latest docker-compose.yml images
   docker-compose pull
+  return_code=$((return_code + $?))
 
   echo "Rebuilding/recreating all containers..."
   docker-compose build --pull
+  return_code=$((return_code + $?))
+
+  return $return_code
 }
 
 # vim:syntax=sh
