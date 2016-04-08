@@ -13,7 +13,9 @@ function setup_testing_environment() {
   mkdir -p "$tmpdir/build-test-environment"
  
   # Setup build test environment
-  cp -r "$BATS_TEST_DIRNAME/../../../." "$tmpdir/build-test-environment"
+  cp -r "$BATS_TEST_DIRNAME/../../." "$tmpdir/build-test-environment"
+  mkdir "$tmpdir/build-test-environment/skel"
+  touch "$tmpdir/build-test-environment/skel/empty"
   mv "$tmpdir/build-test-environment/.git" "$BATS_TMPDIR/$(uuidgen)"
   local git_url=$(realpath $tmpdir/build-test-environment)
   git -C "$git_url" init

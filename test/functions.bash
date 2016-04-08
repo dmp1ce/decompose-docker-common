@@ -21,13 +21,12 @@ function run_tests() {
   local tester_image="docker run --rm --link decompose-docker-docker-testing:docker \
 decompose-docker-docker-testing-tester"
 
-  $tester_image ls -alh /app
-  $tester_image bats /app/skel/bats/docker
+  $tester_image bats /app/test/bats
 }
 
 function teardown_testing_environment() {
   echo "Teardown Docker testing environment ..."
-  testing_env_cleanup=$(docker rm -f decompose-docker-docker-testing)
+  testing_env_cleanup=$(docker rm -fv decompose-docker-docker-testing)
   [ "$?" == "1" ] && echo "$testing_env_cleanup"
 
   local tmp_tester_build="/tmp/decompose-docker-docker-testing"
