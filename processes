@@ -1,10 +1,10 @@
-DECOMPOSE_DOCKER_PROCESSES=( 'remove-untagged-docker-images' )
+DECOMPOSE_DOCKER_PROCESSES=( 'remove-dangling-docker-images' )
 
-_decompose-process-remove-untagged-docker-images() {
+_decompose-process-remove-dangling-docker-images() {
   echo "Removing untagged Docker images..."
   docker rmi $(docker images --filter 'dangling=true' -q --no-trunc)
 }
-_decompose-process-remove-untagged-docker-images_help() {
+_decompose-process-remove-dangling-docker-images_help() {
   echo "  Remove all untagged Docker images that are not being used by a container"
 }
 
