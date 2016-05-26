@@ -12,6 +12,13 @@ load "$BATS_TEST_DIRNAME/bats_functions.bash"
   [ "$status" -ne 0 ]
 }
 
+@test "Help functions do not output any errors" {
+  cd "$WORKING"
+  error_output=$(decompose --help 2>&1 >/dev/null)
+  echo "$error_output"
+  [ -z "$error_output" ]
+}
+
 function setup() {
   setup_testing_environment
 } 
