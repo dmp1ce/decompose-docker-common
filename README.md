@@ -34,7 +34,7 @@ DECOMPOSE_PROCESSES=( "${DECOMPOSE_DOCKER_PROCESSES[@]}" )
 
 ## Processes
 
-- `remove-untagged-docker-images` : Removes all Docker images that are not tagged. Used to clean up most of the unused images.
+- `remove-dangling-docker-images` : Removes all Docker images that are not tagged. Used to clean up most of the unused images.
 
 ### Other functions
 
