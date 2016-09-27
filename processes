@@ -3,6 +3,7 @@ DECOMPOSE_DOCKER_PROCESSES=( 'remove-dangling-docker-images' )
 _decompose-process-remove-dangling-docker-images() {
   echo "Removing dangling Docker images..."
   docker rmi $(docker images --filter 'dangling=true' -q --no-trunc)
+  return 0
 }
 _decompose-process-remove-dangling-docker-images_help() {
   echo "  Remove all dangling Docker images that are not being used by a container"
@@ -31,4 +32,4 @@ _decompose-process-docker-build() {
   return $return_code
 }
 
-# vim:syntax=sh
+# vim:syntax=sh tabstop=2 shiftwidth=2 expandtab
